@@ -1,0 +1,192 @@
+// Here you can add other styles
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.heigh-70{
+    height: 70%;
+}
+.padding-20{
+    padding-bottom: 20rem;
+}
+.font-size-10{
+    font-size: 14px;
+}
+
+.font-size-9{
+    font-size: 11px;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.sidebar-dark{
+background-color: #1F222B !important;
+}
+.justify-content-space-between{
+    justify-content: space-between;
+}
+.md{
+    margin: 9px !important;
+    width: 99% !important;
+}
+.align-items-center{
+    align-items: center;
+}
+div, h1, h2, p, span, h3, h4{
+
+    font-family: "Inter", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+.text-black{
+    color: #101828 !important;
+}
+.text-bold{
+    font-weight: bold !important;
+}
+.text-sm{
+    font-size: 14px !important;
+    color: #475467 !important;
+}
+.bg-success{
+    background: #ECFDF3 !important;
+    color: #1b9e3e;
+}
+.bg-warning{
+    background: #FFFAEB !important;
+    color: #B54708;
+}
+.hCol{
+    // max-width: 17%;
+    // width: 17%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.open-link{
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+
+.btn-filter{
+    border: 1px solid #ddd !important;
+}
+
+.card-title{
+    font-weight: bold !important;
+}
+
+.page{
+    padding: 5px 12px;
+    border-radius: 100%;
+}
+
+.active-page{
+    background: #EDF5FF;
+    color: #3a3ed4;
+}
+
+.sidebar-nav .nav-link.active{
+    background: #3a3ed4;
+}
+
+.rs-dropdown button{
+    border: 1px solid #ddd;
+}
+
+.mr-2{
+    margin-right: 0.5rem !important;
+}
+
+.avlist{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.rs-toggle-checked .rs-toggle-presentation {
+    background-color: #3a3ed4 !important;
+}
+
+.rs-toggle-checked .rs-toggle-presentation:hover{
+    background-color: #3a3ed4 !important;
+}
+.rs-btn-primary{
+    background-color: #3a3ed4 !important; 
+}
+.btn-default{
+    border: 1px solid #999 !important;
+}
+.details-icon{
+    border: 1px solid #999;
+}
+.details-title{
+    color: #5C78F8 !important;
+    font-size: 14px;
+}
+.details-name{
+    color: #101828 !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+.details-subtitle{
+    color: #667085 !important;
+    font-size: 16px;
+    font-weight: 400;
+}
+.details-card{
+    line-height: 9px;
+    margin-top: 0.6rem;
+    margin-left: 0.5rem;
+}
+.font-size-default{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+.filter-drawer {
+    right: 1rem !important;
+    width: 320px !important;
+    top: 1rem !important;
+    bottom: 1rem !important;
+}
+
+.filter-drawer .rs-drawer-content {
+    border-radius: 1rem !important;
+    height: 97% !important;
+}
+.filter-drawer .rs-drawer-content .rs-drawer-body {
+    padding: 1rem !important;
+}
+.filter-drawer .rs-drawer-body-close{
+    display: none !important;
+}
+
+.filter-title{
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #101828 !important;
+    line-height: 20px !important;
+}
+
+.filter-subtitle{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #667085 !important;
+}
+.filter-section{
+    padding: 1rem !important;
+}
+.filter-section .lable{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #101828 !important;
+}
+
+.filter-section .rs-checkbox-label{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #101828 !important;
+}
+.filter-section-footer{
+    position: relative !important;
+    bottom: -2rem !important;
+}

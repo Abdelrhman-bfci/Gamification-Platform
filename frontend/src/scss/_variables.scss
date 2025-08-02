@@ -1,0 +1,13 @@
+// Variable overrides
+//
+// If you want to customize your project please add your variables below.
+
+$enable-deprecation-messages: false !default;
+$enable-smooth-scroll: true !default;
+$enable-rtl: true;
+$primary: #2D3ED4; 
+$danger: #ff4136;
+$tertiary: #2D3ED4;
+.sidebar-nav{
+--cui-sidebar-nav-link-active-bg: var($primary);
+}
