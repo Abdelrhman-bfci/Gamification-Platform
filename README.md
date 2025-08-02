@@ -1,4 +1,4 @@
-# Project Setup (Gamification Platform) Ejada
+# Project Setup (Gamification Platform)
 
 ![Gamification Platform](gamification.png)
 
