@@ -2,7 +2,9 @@ package com.example.backend.dto;
 
 import jakarta.validation.constraints.NotNull;
 
-public class CreateEventDTO {
+import java.io.Serializable;
+
+public class CreateEventDTO implements Serializable {
 
     @NotNull
     private Long userId;
