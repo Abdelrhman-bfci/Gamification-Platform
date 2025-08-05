@@ -1,5 +1,7 @@
 package com.example.backend.service;
 
+import com.example.backend.dto.CreateBadgeDTO;
+import com.example.backend.repository.TenantRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +20,8 @@ public class BadgeEngineService {
     private BadgeRepository badgeRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private TenantRepository tenantRepository;
 
     public void checkAndGrantBadges(Long userId, String tenantId) {
         User user = userRepository.findById(userId).orElse(null);
@@ -33,5 +37,29 @@ public class BadgeEngineService {
             }
         }
         userRepository.save(user);
+    }
+
+    public void saveBadge(CreateBadgeDTO badge) {
+        Badge newBadge = new Badge();
+        newBadge.setName(badge.getName());
+        newBadge.setTenant(tenantRepository.findById(badge.getTenantId()).orElse(null));
+        newBadge.setCumPoint(badge.getCumPoint());
+        badgeRepository.save(newBadge);
+    }
+
+
+    public void update(Long badgeId , CreateBadgeDTO badge) {
+
+        Badge fetchBadge =  badgeRepository.findById(badgeId).orElse(null);
+
+        if (fetchBadge == null) {
+            throw new IllegalArgumentException("Badge not found with id: " + badgeId);
+        }
+
+        fetchBadge.setName(badge.getName());
+        fetchBadge.setTenant(tenantRepository.findById(badge.getTenantId()).orElse(null));
+        fetchBadge.setCumPoint(badge.getCumPoint());
+
+        badgeRepository.save(fetchBadge);
     }
 }

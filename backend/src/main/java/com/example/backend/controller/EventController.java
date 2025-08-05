@@ -41,9 +41,6 @@ public class EventController {
     public ResponseEntity<?> createEvent(@RequestBody @Valid CreateEventDTO event) {
 
         eventService.createEvent(event);
-//        pointEngineService.processEvent(event.getUserId(), event.getEvent(), event.getTenant());
-//        badgeEngineService.checkAndGrantBadges(event.getUserId(), event.getTenant());
-//        levelEngineService.checkAndGrantLevel(event.getUserId(), event.getTenant());
 
         return ResponseEntity.ok("Event processed successfully");
     }
