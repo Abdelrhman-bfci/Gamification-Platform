@@ -12,11 +12,11 @@ public class EventProducer {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    @Value("${spring.rabbitmq.template.default-receive-queue}") private String eventQueueName;
+    @Value("${spring.rabbitmq.template.routing-key}") private String eventQueueKey;
     @Value("${spring.rabbitmq.template.exchange}") private String exchangeName;
 
 
     public void sendEvent(CreateEventDTO event) {
-        rabbitTemplate.convertAndSend(exchangeName, eventQueueName, event);
+        rabbitTemplate.convertAndSend(exchangeName, eventQueueKey, event);
     }
 }
