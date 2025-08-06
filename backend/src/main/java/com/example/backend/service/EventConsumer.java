@@ -3,8 +3,13 @@ package com.example.backend.service;
 import com.example.backend.dto.CreateEventDTO;
 import org.slf4j.Logger;
 import org.springframework.amqp.AmqpRejectAndDontRequeueException;
+import org.springframework.amqp.core.ExchangeTypes;
+import org.springframework.amqp.rabbit.annotation.Exchange;
+import org.springframework.amqp.rabbit.annotation.Queue;
+import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.example.backend.config.RabbitMQConfig;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +25,10 @@ public class EventConsumer {
     @Autowired
     private LevelEngineService levelEngineService;
 
-    @RabbitListener(queues = RabbitMQConfig.EVENT_QUEUE)
+
+
+
+    @RabbitListener(queues = "${spring.rabbitmq.template.default-receive-queue}")
     @Transactional
     public void handleEvent(CreateEventDTO event) {
         try {
@@ -35,5 +43,3 @@ public class EventConsumer {
 
     }
 }
-
-
