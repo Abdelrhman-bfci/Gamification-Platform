@@ -1,5 +1,6 @@
 package com.example.backend.service;
 
+import com.example.backend.dto.StatisticsInterfaceProjection;
 import com.example.backend.model.Point;
 import com.example.backend.model.User;
 import com.example.backend.model.Action;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Objects;
 
 @Service
 public class PointEngineService {
@@ -44,5 +47,10 @@ public class PointEngineService {
         point.setTimestamp(LocalDateTime.now());
         pointRepository.save(point);
         logger.info("Event processed for user {}: event={}, points={}", userId, eventType, points);
+    }
+
+
+    public List<StatisticsInterfaceProjection> getStatistics(String period){
+        return pointRepository.getPointsStatistics(period);
     }
 }

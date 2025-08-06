@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/backend/src/main/java/com/example/backend/repository/PointRepository.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/backend/src/main/java/com/example/backend/repository/PointRepository.java" />
+              <option name="originalContent" value="package com.example.backend.repository;&#10;&#10;import com.example.backend.model.Point;&#10;import org.springframework.data.jpa.repository.JpaRepository;&#10;import org.springframework.data.jpa.repository.Query;&#10;import org.springframework.data.repository.query.Param;&#10;import org.springframework.stereotype.Repository;&#10;&#10;import java.util.List;&#10;&#10;@Repository&#10;public interface PointRepository extends JpaRepository&lt;Point, Long&gt; {&#10;&#10;    @Query(value = &quot;SELECT CASE WHEN :period = 'daily' THEN DATE(p.created_at) WHEN :period = 'weekly' THEN CONCAT(YEAR(p.created_at), '-', WEEK(p.created_at)) WHEN :period = 'monthly' THEN CONCAT(YEAR(p.created_at), '-', MONTH(p.created_at)) END as period, SUM(p.value) as totalPoints FROM point p GROUP BY period ORDER BY period DESC&quot;, nativeQuery = true)&#10;    List&lt;Object[]&gt; getPointsStatistics(@Param(&quot;period&quot;) String period);&#10;}&#10;&#10;" />
+              <option name="updatedContent" value="package com.example.backend.repository;&#10;&#10;import com.example.backend.model.Point;&#10;import org.springframework.data.jpa.repository.JpaRepository;&#10;import org.springframework.data.jpa.repository.Query;&#10;import org.springframework.data.repository.query.Param;&#10;import org.springframework.stereotype.Repository;&#10;&#10;import java.util.List;&#10;&#10;@Repository&#10;public interface PointRepository extends JpaRepository&lt;Point, Long&gt; {&#10;&#10;    @Query(value = &quot;SELECT CASE WHEN :period = 'daily' THEN DATE(p.created_at) WHEN :period = 'weekly' THEN CONCAT(YEAR(p.created_at), '-', WEEK(p.created_at)) WHEN :period = 'monthly' THEN CONCAT(YEAR(p.created_at), '-', MONTH(p.created_at)) END as period, SUM(p.value) as totalPoints FROM point p GROUP BY period ORDER BY period DESC&quot;, nativeQuery = true)&#10;    List&lt;Object[]&gt; getPointsStatistics(@Param(&quot;period&quot;) String period);&#10;&#10;    @Query(&quot;SELECT DATE(p.createdAt) as day, SUM(p.value) as totalPoints FROM Point p GROUP BY day ORDER BY day DESC&quot;)&#10;    List&lt;Object[]&gt; getPointsByDay();&#10;&#10;    @Query(&quot;SELECT FUNCTION('YEAR', p.createdAt) as year, FUNCTION('WEEK', p.createdAt) as week, SUM(p.value) as totalPoints FROM Point p GROUP BY year, week ORDER BY year DESC, week DESC&quot;)&#10;    List&lt;Object[]&gt; getPointsByWeek();&#10;&#10;    @Query(&quot;SELECT FUNCTION('YEAR', p.createdAt) as year, FUNCTION('MONTH', p.createdAt) as month, SUM(p.value) as totalPoints FROM Point p GROUP BY year, month ORDER BY year DESC, month DESC&quot;)&#10;    List&lt;Object[]&gt; getPointsByMonth();&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
